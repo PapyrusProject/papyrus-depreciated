@@ -6,6 +6,7 @@ import { DescriptionAbout } from "../components/AboutComponents/DescriptionAbout
 import { TitleAbout } from "../components/AboutComponents/TitleAbout";
 import { AboutCard } from "../components/AboutComponents/AboutCard";
 import { SectionOurMission } from "../components/AboutComponents/SectionOurMission";
+import { SectionSignUp } from "../components/AboutComponents/SectionSignUp";
 
 export default function About() {
   return (
@@ -18,6 +19,7 @@ export default function About() {
         <AboutCard icon={<BsFillPaletteFill className="text-primary text-7xl" />} title="Functionality and Beauty" paragraph="Functionality with an attractive interface" />
       </section>
       <SectionOurMission />
+      <SectionSignUp />
     </>
   );
 }
