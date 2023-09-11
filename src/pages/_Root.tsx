@@ -7,7 +7,7 @@ import Footer from "../components/Footer/Footer";
 
 export default function _Root() {
   return (
-    <div className="flex flex-col min-h-screen w-full">
+    <div className="flex flex-col min-h-screen w-full bg-white">
       <header>
         <Header />
       </header>
