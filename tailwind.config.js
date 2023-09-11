@@ -2,6 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
+    fontFamily: {
+      inter: ["Inter", "sans-serif"]
+    },
     colors: {
       'black': "#000000",
       'primary': "#068FFF",
