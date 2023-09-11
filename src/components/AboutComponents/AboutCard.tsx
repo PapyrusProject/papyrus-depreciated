@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-interface IProps {
+export interface IProps {
   icon: ReactNode,
   title: String,
   paragraph: string
