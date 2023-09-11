@@ -1,7 +1,4 @@
-import { HiOutlineLightBulb } from "react-icons/hi";
-import { PiPencilLineBold ,PiArticleBold, PiPaintBrushBold, PiBooks, PiDatabaseBold, PiDevices, PiHourglassHighBold, PiWrenchBold, PiStrategy } from "react-icons/pi";
-import { BsFillPaletteFill } from "react-icons/bs"
-
+import { PiPencilLineBold ,PiArticleBold, PiPaintBrushBold, PiBooks, PiDatabaseBold, PiDevices, PiHourglassHighBold, PiWrenchBold, PiStrategy, PiPaletteBold, PiLightbulbFilamentBold } from "react-icons/pi";
 import { DescriptionAbout } from "../components/AboutComponents/DescriptionAbout";
 import { TitleAbout } from "../components/AboutComponents/TitleAbout";
 import { AboutCard } from "../components/AboutComponents/AboutCard";
@@ -15,9 +12,9 @@ export default function About() {
       <TitleAbout />
       <DescriptionAbout />
       <section className="flex flex-wrap justify-center w-full gap-16 py-10 bg-primary">
-        <AboutCard icon={<HiOutlineLightBulb className="text-primary text-7xl" />} title="Continuous Innovation" paragraph="Incorporating new ideas and technologies as they emerge" />
+        <AboutCard icon={<PiLightbulbFilamentBold className="text-primary text-7xl" />} title="Continuous Innovation" paragraph="Incorporating new ideas and technologies as they emerge" />
         <AboutCard icon={<PiArticleBold className="text-primary text-7xl" />} title="Facilitating Creativity" paragraph="We want to simplify the paper creation process." />
-        <AboutCard icon={<BsFillPaletteFill className="text-primary text-7xl" />} title="Functionality and Beauty" paragraph="Functionality with an attractive interface" />
+        <AboutCard icon={<PiPaletteBold className="text-primary text-7xl" />} title="Functionality and Beauty" paragraph="Functionality with an attractive interface" />
       </section>
       <SectionOurMission />
       <SectionSignUp />
