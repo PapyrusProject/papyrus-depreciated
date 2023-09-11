@@ -7,11 +7,11 @@ import Footer from "../components/Footer/Footer";
 
 export default function _Root() {
   return (
-    <div className="flex flex-col min-h-screen w-full">
+    <div className="flex flex-col w-full min-h-screen">
       <header>
         <Header />
       </header>
-      <main className="grow flex items-center justify-center">
+      <main className="grow">
         <Outlet />
       </main>
       <footer>
