@@ -1,21 +1,58 @@
 import { ReactNode } from "react"
+import { PiArticleBold, PiLightbulbFilamentBold, PiPaletteBold } from "react-icons/pi"
 
-export interface IProps {
-  icon: ReactNode,
-  title: String,
-  paragraph: string
-}
+export type IProps = {
+  id?: number,
+  icon?: ReactNode,
+  title?: String,
+  paragraph?: string
+}[]
 
-export function AboutCard(props:IProps){
+const itens: IProps = [
+  {
+    id: 1,
+    icon: <PiLightbulbFilamentBold />,
+    title: "Continuous Innovation",
+    paragraph: "Incorporating new ideas and technologies as they emerge"
+  },
+  {
+    id: 2,
+    icon: <PiArticleBold />,
+    title: "Facilitating Creativity",
+    paragraph: "We want to simplify the paper creation process."
+  },
+  {
+    id: 3,
+    icon: <PiPaletteBold />,
+    title: "Functionality and Beauty",
+    paragraph: "Functionality with an attractive interface"
+  },
+
+]
+
+export function AboutCard() {
 
   return (
-    <div className="flex flex-col items-center gap-4 px-6 py-20 bg-white w-96 rounded-xl">
-      {props.icon}
-      <h2 className="text-2xl font-semibold">{props.title}</h2>
-      <p className="text-center">
-        {props.paragraph}
-      </p>
-    </div>
+    <>
+      {itens.map(
+        (i) => {
+          return (
+            <div className="flex flex-col items-center gap-4 px-6 py-20 bg-white w-96 rounded-xl">
+              <div key={i.id} className="text-primary text-7xl">
+                {i.icon}
+              </div>
+              <h2 className="text-2xl font-semibold">{i.title}</h2>
+
+              <p className="text-center">
+                {i.paragraph}
+              </p>
+
+            </div>
+          )
+        }
+      )}
+    </>
   )
+
 
 }
