@@ -15,11 +15,11 @@ hover = hover:bg-DO HOVER hover:text-DO HOVER
 func = receber a função
 */
 
-export default function LoginBtn({name='', icon, bgColor='', hover='', func}:LoginBtnProps){
+export default function Btn({name='', icon, bgColor='', hover='', func}:LoginBtnProps){
     return(
         <button
         onClick={() => {func}}
-        className={`py-1 px-4 text-lg rounded-lg border border-primary ${bgColor} ${hover}`}
+        className={`py-1 px-4 text-lg rounded-lg border border-primary flex ${bgColor} ${hover}`}
         >
             {icon}
             {name}
