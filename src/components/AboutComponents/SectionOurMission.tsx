@@ -1,6 +1,6 @@
-import Image from "../../Images/rafiki.svg";
+import Image from "../../assets/rafiki.svg";
 
-export function SectionOurMission(){
+export function SectionOurMission() {
 
   return (
     <section className="flex items-center justify-center gap-60">
