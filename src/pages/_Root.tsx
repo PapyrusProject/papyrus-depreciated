@@ -11,7 +11,7 @@ export default function _Root() {
       <header>
         <Header />
       </header>
-      <main className="grow flex items-center justify-center">
+      <main className="grow">
         <Outlet />
       </main>
       <footer>
