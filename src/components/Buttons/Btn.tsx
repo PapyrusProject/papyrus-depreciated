@@ -5,21 +5,21 @@ type LoginBtnProps = ComponentProps<'button'> & {
     icon?: ReactNode,
     bgColor?: string,
     hover?: string,
-    func?: void,
+    func?: () => void,
 }
 /* 
 name =  texto do botão
 icon = icone do botão ( Usar react icons )
-bgColor = bg-COR DO BOTÃO text-COR DO TEXTO
+bgColor = bg-COR DO BOTÃO text-COR DO TEXTO border-COR DA BORDA
 hover = hover:bg-DO HOVER hover:text-DO HOVER
 func = receber a função
 */
 
-export default function Btn({name='', icon, bgColor='', hover='', func}:LoginBtnProps){
-    return(
+export default function Btn({ name = '', icon, bgColor = '', hover = '', func }: LoginBtnProps) {
+    return (
         <button
-        onClick={() => {func}}
-        className={`items-center justify-center py-1 px-4 text-lg rounded-lg border border-primary flex ${bgColor} ${hover}`}
+            onClick={func}
+            className={`items-center justify-center py-1 px-4 text-lg rounded-lg border flex ${bgColor} ${hover}`}
         >
             {icon}
             {name}
