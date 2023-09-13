@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <nav className="flex items-center justify-around w-[90%] py-2 mx-auto">
-      <a href="/" className="text-4xl text-primary">
+      <a href="/" className="text-4xl text-primary font-bold">
         Papy<span className="text-black">rus.</span>
       </a>
       <div className="flex items-center gap-4">
