@@ -5,7 +5,7 @@ type LoginBtnProps = ComponentProps<'button'> & {
     icon?: ReactNode,
     bgColor?: string,
     hover?: string,
-    func?: void,
+    func?: any,
 }
 /* 
 name =  texto do botão
@@ -18,7 +18,7 @@ func = receber a função
 export default function Btn({ name = '', icon, bgColor = '', hover = '', func }: LoginBtnProps) {
     return (
         <button
-            onClick={() => { func }}
+            onClick={func}
             className={`py-1 px-4 text-lg rounded-lg border flex ${bgColor} ${hover}`}
         >
             {icon}
