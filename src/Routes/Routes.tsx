@@ -8,6 +8,7 @@ import Contact from "../pages/Contact";
 import About from "../pages/About";
 import Services from "../pages/Services";
 import Users from "../pages/Users";
+import SignUp from "../pages/SignUp";
 
 export const routes = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ export const routes = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/service", element: <Services /> },
       { path: "/users", element: <Users /> },
+      { path: "/signup", element: <SignUp /> },
     ],
   },
 ]);
