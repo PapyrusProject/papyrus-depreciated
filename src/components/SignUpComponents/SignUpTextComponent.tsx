@@ -40,7 +40,7 @@ export function SignUpTextComponent(){
         {
           socialMediaList.map(item => {
             return (
-              <SocialMedia icon={item.icon} subtitle={item.subtitle} id={item.id} />
+              <SocialMedia icon={item.icon} subtitle={item.subtitle} key={item.id} />
             )
           })
         }
