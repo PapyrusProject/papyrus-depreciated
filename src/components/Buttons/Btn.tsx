@@ -19,7 +19,7 @@ export default function Btn({name='', icon, bgColor='', hover='', func}:LoginBtn
     return(
         <button
         onClick={() => {func}}
-        className={`py-1 px-4 text-lg rounded-lg border border-primary flex ${bgColor} ${hover}`}
+        className={`items-center justify-center py-1 px-4 text-lg rounded-lg border border-primary flex ${bgColor} ${hover}`}
         >
             {icon}
             {name}
