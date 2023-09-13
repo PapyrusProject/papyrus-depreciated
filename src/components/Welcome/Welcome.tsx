@@ -19,7 +19,7 @@ export default function Welcome() {
                 </div>
                 <Btn
                     name='My Note'
-                    icon={<BiSolidNotepad className='mt-1 mr-1' />}
+                    icon={<BiSolidNotepad className=' mr-1' />}
                     bgColor="bg-white text-primary px-10"
                     hover="hover:bg-primary hover:text-white"
                 />
