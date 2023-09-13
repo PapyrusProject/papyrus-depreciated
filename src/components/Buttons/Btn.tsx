@@ -5,7 +5,7 @@ type LoginBtnProps = ComponentProps<'button'> & {
     icon?: ReactNode,
     bgColor?: string,
     hover?: string,
-    func?: any,
+    func?: () => void,
 }
 /* 
 name =  texto do botão

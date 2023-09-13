@@ -10,7 +10,7 @@ export default function NavLink({ name, page, atualPage }: NavLinkProps) {
     return (
         <a
             href={page}
-            className={`p-1 text-lg ${atualPage ? 'text-secondary' : 'text-black'} hover:text-primary`}
+            className={`p-1 text-md font-semibold ${atualPage ? 'text-secondary' : 'text-black'} hover:text-primary`}
         >
             {name}
         </a>
