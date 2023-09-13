@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import Btn from "../Buttons/Btn";
 import NavLink from "../Links/NavLink";
 import { BsFillPersonFill } from "react-icons/bs";
 
 export default function Header() {
+
+  const navigate = useNavigate();
+  function RedirectTo(){
+    navigate("/signup");
+  }
+
   return (
     <nav className="flex items-center justify-between w-1/2 py-2 mx-auto">
       <a href="/" className="text-4xl text-primary">
@@ -19,6 +26,7 @@ export default function Header() {
           name="Sign Up"
           bgColor="bg-primary text-white items-center gap-2"
           hover="hover:bg-primary hover:text-white"
+          func={RedirectTo}
         />
         <Btn
           name="Login"
