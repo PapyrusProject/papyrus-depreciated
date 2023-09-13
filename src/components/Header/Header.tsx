@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import Btn from "../Buttons/Btn";
 import NavLink from "../Links/NavLink";
-import { BsFillPersonFill } from "react-icons/bs";
+import { PiUserFill } from "react-icons/pi";
 
 export default function Header() {
 
@@ -24,7 +24,7 @@ export default function Header() {
       </div>
       <div className="flex gap-6">
         <Btn
-          icon={<BsFillPersonFill />}
+          icon={<PiUserFill />}
           name="Sign Up"
           bgColor="bg-primary text-white items-center gap-2"
           hover="hover:bg-white hover:text-primary"

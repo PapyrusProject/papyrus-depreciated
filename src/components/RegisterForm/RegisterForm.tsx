@@ -12,7 +12,7 @@ export default function RegisterForm() {
 
   return (
     <div className="space-y-4 text-center">
-      <h2 className="text-2xl font-bold text-primary">Sign Up</h2>
+      <h2 className="text-5xl font-bold text-primary">Sign Up</h2>
       <form
         className="flex flex-col items-center justify-center gap-3"
         onSubmit={handleSubmit(handleForm)}
@@ -61,10 +61,10 @@ export default function RegisterForm() {
           </p>
         )}
         <Btn
-          icon={<PiUserFill />}
+          icon={<PiUserFill className=' mr-2' />}
           name="Sign Up"
-          bgColor="bg-primary text-white"
-          hover="hover:bg-white text-primary"
+          bgColor="bg-primary text-white mt-7 px-7"
+          hover="hover:bg-white hover:text-primary"
           type="submit"
         ></Btn>
       </form>
