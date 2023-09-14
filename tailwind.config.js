@@ -10,6 +10,7 @@ export default {
       'primary': "#068FFF",
       'white': "#EEEEEE",
       'secondary': "#4E4FEB",
+      'gray': "#D9D9D9",
     },
     extend: {},
   },

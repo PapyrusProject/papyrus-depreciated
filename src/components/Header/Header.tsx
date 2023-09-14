@@ -1,7 +1,11 @@
 import LoginBtn from "../Buttons/LoginBtn";
 import NavLink from "../Links/NavLink";
 
-export default function Header() {
+interface HeaderProps {
+  onOpenLoginModal(): void,
+}
+
+export default function Header({ onOpenLoginModal }: HeaderProps) {
   return (
     <nav className="flex items-center justify-between w-1/2 mx-auto py-2">
       <a 
@@ -14,7 +18,7 @@ export default function Header() {
         <NavLink name="Service" page="/service" />
         <NavLink name="Contact" page="/contact" />
       </div>
-      <LoginBtn name="Login" />
+      <LoginBtn name="Login" onOpenLoginModal={onOpenLoginModal} />
     </nav>
   );
 }
