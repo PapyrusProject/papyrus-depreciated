@@ -27,12 +27,12 @@ const socialMediaList: IProps[] = [
   }
 ]
 
-export function SignUpTextComponent(){
+export function SignUpTextComponent() {
 
   return (
-    <section className="flex flex-col items-center justify-center w-1/2 gap-10 px-16 py-32">
+    <section className="flex flex-col items-center justify-center w-1/2 gap-10 px-16 py-32 ">
       <h1 className="text-4xl font-bold text-white">HELLO</h1>
-      <h2 className="text-3xl font-semibold text-white">Welcome To Papyrus</h2>
+      <h2 className="text-3xl font-bold text-white">Welcome To Papyrus</h2>
       <p className="text-white">
         Lembre-se, a chave para alcançar seus objetivos está na sua determinação e perseverança. Mantenha o foco, continue trabalhando duro e você verá seus sonhos se tornarem realidade.
       </p>

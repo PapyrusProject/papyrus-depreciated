@@ -11,8 +11,8 @@ export default function RegisterForm() {
   const { errors, register, handleForm, handleSubmit } = useRegister();
 
   return (
-    <div className="space-y-4 text-center">
-      <h2 className="text-2xl font-bold text-primary">Sign Up</h2>
+    <div className="flex flex-col justify-center w-1/2 space-y-4 text-center bg-white rounded-lg">
+      <h2 className="text-5xl font-bold text-primary">Sign Up</h2>
       <form
         className="flex flex-col items-center justify-center gap-3"
         onSubmit={handleSubmit(handleForm)}
@@ -23,7 +23,7 @@ export default function RegisterForm() {
           type="text"
         />
         {errors.username && (
-          <p className="text-sm text-secondary italic">
+          <p className="text-sm italic text-secondary">
             {errors.username?.message}
           </p>
         )}
@@ -34,7 +34,7 @@ export default function RegisterForm() {
           type="text"
         />
         {errors.email && (
-          <p className="text-sm text-secondary italic">
+          <p className="text-sm italic text-secondary">
             {errors.email?.message}
           </p>
         )}
@@ -45,7 +45,7 @@ export default function RegisterForm() {
           type="password"
         />
         {errors.password && (
-          <p className="text-sm text-secondary italic">
+          <p className="text-sm italic text-secondary">
             {errors.password?.message}
           </p>
         )}
@@ -56,15 +56,15 @@ export default function RegisterForm() {
           type="password"
         />
         {errors.confirmPassword && (
-          <p className="text-sm text-secondary italic">
+          <p className="text-sm italic text-secondary">
             {errors.confirmPassword?.message}
           </p>
         )}
         <Btn
-          icon={<PiUserFill />}
+          icon={<PiUserFill className='mr-2 ' />}
           name="Sign Up"
-          bgColor="bg-primary text-white"
-          hover="hover:bg-white text-primary"
+          bgColor="bg-primary text-white mt-7 px-7"
+          hover="hover:bg-white hover:text-primary"
           type="submit"
         ></Btn>
       </form>
