@@ -2,7 +2,7 @@ import { X } from '@phosphor-icons/react';
 import userIcon from '../../assets/user-fill.svg'
 import passwordIcon from '../../assets/password-icon.svg'
 import Modal from 'react-modal';
-import LoginBtn from '../Buttons/LoginBtn';
+import Btn from '../Buttons/Btn';
 
 interface LoginModalProps {
   isLoginModalOpen: boolean,
@@ -60,7 +60,11 @@ export function LoginModal({ isLoginModalOpen, onRequestClose }: LoginModalProps
           Reset password
         </a>
         
-        <LoginBtn name='Login' />
+        <Btn
+          name='Login'
+          bgColor="bg-white text-primary"
+          hover="hover:bg-primary hover:text-white"
+        />
       </form>
     </Modal>
   )

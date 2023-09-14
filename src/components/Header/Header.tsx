@@ -1,24 +1,45 @@
-import LoginBtn from "../Buttons/LoginBtn";
+import { useNavigate, useLocation } from "react-router-dom";
+import Btn from "../Buttons/Btn";
 import NavLink from "../Links/NavLink";
+import { BsFillPersonFill } from "react-icons/bs";
 
 interface HeaderProps {
   onOpenLoginModal(): void,
 }
 
 export default function Header({ onOpenLoginModal }: HeaderProps) {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  function RedirectTo() {
+    navigate("/signup");
+  }
+
   return (
-    <nav className="flex items-center justify-between w-1/2 mx-auto py-2">
-      <a 
-      href="/"
-      className="text-primary text-4xl">
+    <nav className="flex items-center justify-around w-[90%] py-2 mx-auto">
+      <a href="/" className="text-4xl text-primary font-bold">
         Papy<span className="text-black">rus.</span>
       </a>
       <div className="flex items-center gap-4">
-        <NavLink name="About" page="/about" />
-        <NavLink name="Service" page="/service" />
-        <NavLink name="Contact" page="/contact" />
+        <NavLink name="About" page="/about" atualPage={location.pathname === "/about"} />
+        <NavLink name="Service" page="/service" atualPage={location.pathname === "/service"} />
+        <NavLink name="Contact" page="/contact" atualPage={location.pathname === "/contact"} />
       </div>
-      <LoginBtn name="Login" onOpenLoginModal={onOpenLoginModal} />
+      <div className="flex gap-6">
+        <Btn
+          icon={<BsFillPersonFill />}
+          name="Sign Up"
+          bgColor="bg-primary text-white items-center gap-2"
+          hover="hover:bg-white hover:text-primary"
+          func={RedirectTo}
+        />
+        <Btn
+          name="Login"
+          bgColor="bg-white text-primary"
+          hover="hover:bg-primary hover:text-white"
+          func={onOpenLoginModal}
+        />
+      </div>
     </nav>
   );
 }

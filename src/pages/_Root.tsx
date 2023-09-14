@@ -11,11 +11,11 @@ interface _RootProps {
 
 export default function _Root({ onOpenLoginModal }: _RootProps) {
   return (
-    <div className="flex flex-col min-h-screen w-full font-inter">
+    <div className="flex flex-col min-h-screen w-full font-inter bg-white">
       <header>
         <Header onOpenLoginModal={onOpenLoginModal} />
       </header>
-      <main className="grow flex items-center justify-center">
+      <main className="grow">
         <Outlet />
       </main>
       <footer>
