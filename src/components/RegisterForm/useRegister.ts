@@ -6,8 +6,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RegisterProps, schema } from "./schema";
 
-
-
 export const useRegister = () => {
     const {
     handleSubmit,

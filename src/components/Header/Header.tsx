@@ -3,11 +3,14 @@ import Btn from "../Buttons/Btn";
 import NavLink from "../Links/NavLink";
 import { PiUserFill } from "react-icons/pi";
 
-export default function Header() {
+interface HeaderProps {
+  onOpenLoginModal(): void,
+}
 
+export default function Header({ onOpenLoginModal }: HeaderProps) {
   const location = useLocation();
-
   const navigate = useNavigate();
+  
   function RedirectTo() {
     navigate("/signup");
   }
@@ -34,6 +37,7 @@ export default function Header() {
           name="Login"
           bgColor="bg-white text-primary"
           hover="hover:bg-primary hover:text-white"
+          func={onOpenLoginModal}
         />
       </div>
     </nav>
