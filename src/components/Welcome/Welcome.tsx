@@ -24,7 +24,7 @@ export default function Welcome() {
                     hover="hover:bg-primary hover:text-white"
                 />
             </div>
-            <img className='w-full sm:w-[50%]' src={Logo}></img>
+            <img className='w-full ssm:w-[50%]' src={Logo}></img>
         </div>
     )
 }
