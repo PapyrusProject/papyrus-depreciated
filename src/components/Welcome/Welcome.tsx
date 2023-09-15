@@ -4,8 +4,8 @@ import Logo from '../../assets/logo.png'
 
 export default function Welcome() {
     return (
-        <div className='flex mx-36 mt-20'>
-            <div>
+        <div className='flex flex-col md:flex-row mx-3 sm:mx-15 lg:mx-36 mt-20'>
+            <div className='w-full'>
                 <p className="text-secondary text-sm">Plan for growth</p>
                 <h1 className="text-4xl pt-5 font-bold">
                     Welcome to <span className="text-primary">Papyrus.</span>
@@ -24,7 +24,7 @@ export default function Welcome() {
                     hover="hover:bg-primary hover:text-white"
                 />
             </div>
-            <img src={Logo}></img>
+            <img className='w-full sm:w-[50%]' src={Logo}></img>
         </div>
     )
 }
