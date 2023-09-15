@@ -4,7 +4,7 @@ import Logo from '../../assets/logo.svg'
 
 export default function Welcome() {
     return (
-        <div className='w-[90%] flex flex-col justify-cente md:flex-row mx-auto '>
+        <div className='w-[90%] flex flex-col justify-center md:flex-row mx-auto '>
             <div className='w-full md:w-[75%] lg:w-[65%] xl:w-[55%] mt-20'>
                 <p className="text-secondary text-sm">Plan for growth</p>
                 <h1 className="text-4xl pt-5 font-bold">
