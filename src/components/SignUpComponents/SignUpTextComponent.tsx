@@ -6,7 +6,7 @@ import { ReactNode } from "react"
 export type IProps = {
   id: number,
   icon: ReactNode,
-  subtitle: String,
+  subtitle: string,
 }
 
 const socialMediaList: IProps[] = [
