@@ -30,13 +30,13 @@ const socialMediaList: IProps[] = [
 export function SignUpTextComponent() {
 
   return (
-    <section className="flex flex-col items-center justify-center w-1/2 gap-10 px-16 py-32 ">
+    <section className="flex flex-col items-center justify-center gap-10 px-6 py-16 w-[100%] sm:w-[100%] lg:w-[50%] lg:py-24 xl:py-32 xl:gap-12">
       <h1 className="text-4xl font-bold text-white">HELLO</h1>
       <h2 className="text-3xl font-bold text-white">Welcome To Papyrus</h2>
       <p className="text-white">
         Lembre-se, a chave para alcançar seus objetivos está na sua determinação e perseverança. Mantenha o foco, continue trabalhando duro e você verá seus sonhos se tornarem realidade.
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-20">
+      <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
         {
           socialMediaList.map(item => {
             return (

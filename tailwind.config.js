@@ -7,6 +7,7 @@ export default {
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
+      'xl2': '1500px',
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"]
