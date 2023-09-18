@@ -12,7 +12,7 @@ export default function About() {
     <>
       <TitleAbout />
       <DescriptionAbout />
-      <section className="flex flex-wrap justify-center w-full gap-16 py-10 h-full bg-primary">
+      <section className="flex flex-col xl:flex-row justify-center w-full gap-16 py-10 h-full bg-primary">
         <AboutCard />
       </section>
       <SectionOurMission />

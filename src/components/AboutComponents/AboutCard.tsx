@@ -37,7 +37,7 @@ export function AboutCard() {
       {itens.map(
         (i) => {
           return (
-            <div className="flex flex-col items-center gap-4 px-6 py-20 bg-white w-96 rounded-xl">
+            <div className="flex flex-col items-center gap-4 px-6 py-20 bg-white w-[90%] ssm:w-96 rounded-xl">
               <div key={i.id} className="text-primary text-7xl">
                 {i.icon}
               </div>
