@@ -36,7 +36,7 @@ export function SignUpTextComponent() {
       <p className="text-white">
         Lembre-se, a chave para alcançar seus objetivos está na sua determinação e perseverança. Mantenha o foco, continue trabalhando duro e você verá seus sonhos se tornarem realidade.
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-20">
+      <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
         {
           socialMediaList.map(item => {
             return (
