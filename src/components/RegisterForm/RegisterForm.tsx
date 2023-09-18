@@ -11,7 +11,7 @@ export default function RegisterForm() {
   const { errors, register, handleForm, handleSubmit } = useRegister();
 
   return (
-    <div className="flex flex-col justify-center w-1/2 space-y-4 text-center bg-white rounded-lg">
+    <div className="flex flex-col justify-center gap-6 py-12 text-center bg-white rounded-lg w-80 sm:w-[100%] lg:w-[50%] xl:py-24">
       <h2 className="text-5xl font-bold text-primary">Sign Up</h2>
       <form
         className="flex flex-col items-center justify-center gap-3"

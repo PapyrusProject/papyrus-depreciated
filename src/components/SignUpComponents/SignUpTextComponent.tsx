@@ -30,7 +30,7 @@ const socialMediaList: IProps[] = [
 export function SignUpTextComponent() {
 
   return (
-    <section className="flex flex-col items-center justify-center w-1/2 gap-10 px-16 py-32 ">
+    <section className="flex flex-col items-center justify-center gap-10 px-6 py-16 w-80 sm:w-[100%] lg:w-[50%] lg:py-24 xl:py-32 xl:gap-12">
       <h1 className="text-4xl font-bold text-white">HELLO</h1>
       <h2 className="text-3xl font-bold text-white">Welcome To Papyrus</h2>
       <p className="text-white">
