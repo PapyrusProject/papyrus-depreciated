@@ -6,7 +6,7 @@ type NavLinkProps = ComponentProps<'a'> & {
     atualPage: boolean,
 }
 
-export default function NavLink({ name, page, atualPage }: NavLinkProps) {
+export default function Navlink({ name, page, atualPage }: NavLinkProps) {
     return (
         <a
             href={page}
