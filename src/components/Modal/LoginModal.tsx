@@ -3,6 +3,7 @@ import userIcon from '../../assets/user-fill.svg'
 import passwordIcon from '../../assets/password-icon.svg'
 import Modal from 'react-modal';
 import Btn from '../Buttons/Btn';
+import { useRegister } from '../RegisterForm/useRegister';
 
 interface LoginModalProps {
   isLoginModalOpen: boolean,
@@ -10,6 +11,8 @@ interface LoginModalProps {
 }
 
 export function LoginModal({ isLoginModalOpen, onRequestClose }: LoginModalProps) {
+  const { errors, register, handleForm, handleSubmit } = useRegister();
+
   return (
     <Modal
       isOpen={isLoginModalOpen}
@@ -25,7 +28,10 @@ export function LoginModal({ isLoginModalOpen, onRequestClose }: LoginModalProps
         <X className="w-6 h-6" />
       </button>
 
-      <form className="flex flex-col items-center justify-center gap-7">
+      <form
+        onSubmit={handleSubmit(handleForm)}
+        className="flex flex-col items-center justify-center gap-7"
+      >
         <h2 className="text-[3.35rem] text-primary font-bold mb-7">
           Papyrus
         </h2>
@@ -33,24 +39,40 @@ export function LoginModal({ isLoginModalOpen, onRequestClose }: LoginModalProps
           Login
         </h3>
 
-        <div className='w-96 bg-gray flex items-center gap-7 rounded-lg px-4 py-3'>
-          <img src={userIcon} alt='Ícone de usuário' />
-          <input
-            type="email"
-            required
-            placeholder="Type your e-mail"
-            className=" text-lg placeholder:text-black/50 bg-gray border-none outline-none"
-          />
+        <div>
+          <div className='w-96 bg-gray flex items-center gap-7 rounded-lg px-4 py-3'>
+            <img src={userIcon} alt='Ícone de usuário' />
+            <input
+              {...register("email")}
+              type="email"
+              required
+              placeholder="Insira seu e-mail"
+              className="w-full text-lg placeholder:text-black/50 bg-gray border-none outline-none"
+            />
+          </div>
+          {errors.email && (
+            <p className="text-sm text-center italic text-secondary">
+              {errors.email?.message}
+            </p>
+          )}
         </div>
 
-        <div className='w-96 bg-gray flex items-center gap-7 rounded-lg px-4 py-3'>
-          <img src={passwordIcon} alt='Ícone de password' />
-          <input
-            type="password"
-            required
-            placeholder="Type your password"
-            className=" text-lg placeholder:text-black/50 bg-gray border-none outline-none"
-          />
+        <div>
+          <div className='w-96 bg-gray flex items-center gap-7 rounded-lg px-4 py-3'>
+            <img src={passwordIcon} alt='Ícone de password' />
+            <input
+              {...register("password")}
+              type="password"
+              required
+              placeholder="Insira sua senha"
+              className="w-full text-lg placeholder:text-black/50 bg-gray border-none outline-none"
+            />
+          </div>
+          {errors.password && (
+            <p className="text-sm text-center italic text-secondary">
+              {errors.password?.message}
+            </p>
+          )}
         </div>
 
         <a
