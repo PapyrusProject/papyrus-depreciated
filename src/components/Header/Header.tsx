@@ -10,7 +10,7 @@ interface HeaderProps {
 export default function Header({ onOpenLoginModal }: HeaderProps) {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   function RedirectTo() {
     navigate("/signup");
   }
