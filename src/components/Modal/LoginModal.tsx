@@ -39,7 +39,7 @@ export function LoginModal({ isLoginModalOpen, onRequestClose }: LoginModalProps
             type="email"
             required
             placeholder="Type your e-mail"
-            className=" text-lg placeholder:text-black/50 bg-gray border-none outline-none"
+            className="text-lg placeholder:text-black/50 bg-gray border-none outline-none"
           />
         </div>
 

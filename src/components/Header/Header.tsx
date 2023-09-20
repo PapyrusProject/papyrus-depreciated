@@ -1,10 +1,15 @@
-import { useNavigate, useLocation } from "react-router-dom";
+// Pages and components imports
 import Btn from "../Buttons/Btn";
-import NavLink from "../Links/NavLink";
+import Navlink from "../Links/Navlink";
+
+// react router dom packages
+import { useNavigate, useLocation } from "react-router-dom";
+
+//React icons Packages
 import { PiUserFill } from "react-icons/pi";
 
 interface HeaderProps {
-  onOpenLoginModal(): void,
+  onOpenLoginModal(): void;
 }
 
 export default function Header({ onOpenLoginModal }: HeaderProps) {
@@ -21,9 +26,21 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
         Papy<span className="text-black">rus.</span>
       </a>
       <div className="flex items-center gap-4">
-        <NavLink name="About" page="/about" atualPage={location.pathname === "/about"} />
-        <NavLink name="Service" page="/service" atualPage={location.pathname === "/service"} />
-        <NavLink name="Contact" page="/contact" atualPage={location.pathname === "/contact"} />
+        <Navlink
+          name="About"
+          page="/about"
+          atualPage={location.pathname === "/about"}
+        />
+        <Navlink
+          name="Service"
+          page="/service"
+          atualPage={location.pathname === "/service"}
+        />
+        <Navlink
+          name="Contact"
+          page="/contact"
+          atualPage={location.pathname === "/contact"}
+        />
       </div>
       <div className="flex gap-6">
         <Btn

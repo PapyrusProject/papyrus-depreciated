@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 
 interface IProps {
   icon: ReactNode,
-  subtitle: String,
+  subtitle: string,
   path?: string
 }
 export function SocialMedia(props:IProps){
