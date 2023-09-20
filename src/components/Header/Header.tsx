@@ -16,7 +16,7 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
   }
 
   return (
-    <nav className="flex items-center justify-around w-[90%] py-2 mx-auto">
+    <nav className="flex items-center justify-around py-2 mx-auto">
       <a href="/" className="text-4xl text-primary font-bold">
         Papy<span className="text-black">rus.</span>
       </a>
@@ -29,7 +29,7 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
         <Btn
           icon={<PiUserFill />}
           name="Sign Up"
-          bgColor="bg-primary text-white items-center gap-2"
+          bgColor="bg-primary text-white items-center"
           hover="hover:bg-white hover:text-primary"
           func={RedirectTo}
         />

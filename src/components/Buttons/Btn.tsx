@@ -19,7 +19,7 @@ export default function Btn({ name = '', icon, bgColor = '', hover = '', func }:
     return (
         <button
             onClick={func}
-            className={`items-center justify-center py-1 px-4 text-lg rounded-lg border flex ${bgColor} ${hover}`}
+            className={`items-center justify-center py-1 px-4 text-lg rounded-lg border flex gap-2 ${bgColor} ${hover}`}
         >
             {icon}
             {name}
