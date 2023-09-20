@@ -46,7 +46,7 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
         <Btn
           icon={<PiUserFill />}
           name="Sign Up"
-          bgColor="bg-primary text-white items-center gap-2"
+          bgColor="bg-primary text-white items-center"
           hover="hover:bg-white hover:text-primary"
           func={RedirectTo}
         />
