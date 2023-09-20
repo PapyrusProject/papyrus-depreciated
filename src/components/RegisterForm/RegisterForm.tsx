@@ -6,7 +6,7 @@ import Btn from "../Buttons/Btn";
 
 // React-icons
 import { PiUserFill, PiPasswordBold } from "react-icons/pi";
-import {MdEmail} from 'react-icons/md'
+import { MdEmail } from "react-icons/md";
 
 export default function RegisterForm() {
   const { errors, register, handleForm, handleSubmit } = useRegister();
@@ -22,7 +22,6 @@ export default function RegisterForm() {
           {...register("username")}
           placeholder="Insira seu nome de usuário"
           type="text"
-          icon={<PiUserFill />}
         />
         {errors.username && (
           <p className="text-sm italic text-secondary">
@@ -34,7 +33,6 @@ export default function RegisterForm() {
           {...register("email")}
           placeholder="Insira seu e-mail"
           type="text"
-          icon={<MdEmail />}
         />
         {errors.email && (
           <p className="text-sm italic text-secondary">
@@ -46,7 +44,6 @@ export default function RegisterForm() {
           {...register("password")}
           placeholder="Insira sua senha"
           type="password"
-          icon={<PiPasswordBold />}
         />
         {errors.password && (
           <p className="text-sm italic text-secondary">
@@ -58,7 +55,6 @@ export default function RegisterForm() {
           {...register("confirmPassword")}
           placeholder="Confirme a sua senha"
           type="password"
-          icon={<PiPasswordBold />}
         />
         {errors.confirmPassword && (
           <p className="text-sm italic text-secondary">
@@ -66,7 +62,7 @@ export default function RegisterForm() {
           </p>
         )}
         <Btn
-          icon={<PiUserFill className='mr-2 ' />}
+          icon={<PiUserFill className="mr-2 " />}
           name="Sign Up"
           bgColor="bg-primary text-white mt-7 px-7"
           hover="hover:bg-white hover:text-primary"

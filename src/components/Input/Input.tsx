@@ -6,25 +6,22 @@ type inputProps = InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export const Input = forwardRef<HTMLInputElement, inputProps>(
-  (
-    { name = "", label = "", type = "text", icon="", ...props },
-    ref
-  ) => {
+  ({ name = "", label = "", type = "text", icon = "", ...props }, ref) => {
     const inputId = useId();
 
     return (
       <>
         <label htmlFor={inputId}>{label}</label>
-        <div className="flex items-center justify-start text-primary">
-        {icon}
-        <input
-          className="p-2 ml-1 bg-gray rounded-lg focus:shadow-sm focus:shadow-primary focus:border focus:border-primary/50 outline-none"
-          id={inputId}
-          type={type}
-          name={name}
-          ref={ref}
-          {...props}
-        />
+        <div className="pl-1 flex items-center justify-start text-primary bg-gray rounded focus-within:shadow-sm focus-within:shadow-primary focus-within:border focus-within:border-primary/50 ">
+          {icon}
+          <input
+            className="p-2 bg-gray rounded-lg outline-none"
+            id={inputId}
+            type={type}
+            name={name}
+            ref={ref}
+            {...props}
+          />
         </div>
       </>
     );

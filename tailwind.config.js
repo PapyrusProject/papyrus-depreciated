@@ -3,12 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     screens: {
-      'ssm': '450px',
+      'xsm': '450px',
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
-      'xl2': '1500px',
+      '2xl': '1500px',
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"]
