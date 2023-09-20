@@ -4,7 +4,7 @@ import { PiArticleBold, PiLightbulbFilamentBold, PiPaletteBold } from "react-ico
 export type IProps = {
   id?: number,
   icon?: ReactNode,
-  title?: String,
+  title?: string,
   paragraph?: string
 }[]
 
