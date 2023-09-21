@@ -8,6 +8,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 //React icons Packages
 import { PiUserFill } from "react-icons/pi";
 
+//import motion
+import { motion, useCycle } from "framer-motion"
+
 interface HeaderProps {
   onOpenLoginModal(): void;
 }
@@ -15,6 +18,7 @@ interface HeaderProps {
 export default function Header({ onOpenLoginModal }: HeaderProps) {
   const location = useLocation();
   const navigate = useNavigate();
+  const menu = useCycle(false, true)
 
   function RedirectTo() {
     navigate("/signup");
@@ -25,7 +29,12 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
       <a href="/" className="text-4xl text-primary font-bold">
         Papy<span className="text-black">rus.</span>
       </a>
-      <div className="flex items-center gap-4">
+      <div className="hidden md:flex  items-center gap-4">
+        <Navlink
+          name="Home"
+          page="/"
+          atualPage={location.pathname === "/"}
+        />
         <Navlink
           name="About"
           page="/about"
@@ -42,7 +51,7 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
           atualPage={location.pathname === "/contact"}
         />
       </div>
-      <div className="flex gap-6">
+      <div className="hidden md:flex gap-6">
         <Btn
           icon={<PiUserFill />}
           name="Sign Up"
@@ -57,6 +66,7 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
           func={onOpenLoginModal}
         />
       </div>
+
     </nav>
   );
 }
