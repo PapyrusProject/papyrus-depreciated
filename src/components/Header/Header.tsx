@@ -11,6 +11,7 @@ import { FaBars } from "react-icons/fa6"
 
 //import motion
 import { useCycle } from "framer-motion"
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   onOpenLoginModal(): void;
@@ -19,7 +20,30 @@ interface HeaderProps {
 export default function Header({ onOpenLoginModal }: HeaderProps) {
   const location = useLocation();
   const navigate = useNavigate();
-  const [menu, setMenu] = useCycle(false, true)
+  const [menu, setMenu] = useState(false)
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  function click() {
+    setMenu(!menu);
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (screenWidth > 768) {
+      setMenu(false);
+    }
+  }, [screenWidth]);
 
 
   function RedirectTo() {
@@ -76,7 +100,7 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
           <Btn
             icon={<FaBars className="w-6 h-6" />}
             bgColor="bg-white text-primary"
-            func={setMenu}
+            func={click}
           />
         </div>
       </nav>
