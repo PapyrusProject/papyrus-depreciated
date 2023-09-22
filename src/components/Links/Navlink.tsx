@@ -3,7 +3,7 @@ import { ComponentProps } from "react"
 type NavLinkProps = ComponentProps<'a'> & {
     name?: string,
     page?: string,
-    atualPage: boolean,
+    atualPage?: boolean,
 }
 
 export default function Navlink({ name, page, atualPage }: NavLinkProps) {
