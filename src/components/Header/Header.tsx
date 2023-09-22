@@ -20,10 +20,9 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
   const location = useLocation();
   const navigate = useNavigate();
   const [menu, setMenu] = useCycle(false, true)
-  const [toggle, setToggle] = useCycle(true, false)
+
 
   function RedirectTo() {
-    setToggle()
     navigate("/signup");
   }
 
@@ -58,13 +57,14 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
           />
         </div>
         <div className="hidden md:flex gap-6">
-          {toggle && <Btn
+          <Btn
             icon={<PiUserFill />}
             name="Sign Up"
             bgColor="bg-primary text-white items-center"
             hover="hover:bg-white hover:text-primary"
+            atualPage={location.pathname === "/signup"}
             func={RedirectTo}
-          />}
+          />
           <Btn
             name="Login"
             bgColor="bg-white text-primary"
@@ -84,30 +84,26 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
       {/* header mobile */}
       {menu &&
         <div className="flex flex-row-reverse">
-          <div className="w-[250px] h-[150px] bg-primary flex flex-col items-center">
+          <div className="w-auto h-auto bg-white border-2 border-primary flex flex-col items-center">
             <div className="flex gap-2">
               <div className="flex flex-col">
                 <Navlink
                   name="Home"
                   page="/"
-                  atualPage={location.pathname === "/"}
                 />
                 <Navlink
                   name="About"
                   page="/about"
-                  atualPage={location.pathname === "/about"}
                 />
               </div>
               <div className="flex flex-col">
                 <Navlink
                   name="Service"
                   page="/service"
-                  atualPage={location.pathname === "/service"}
                 />
                 <Navlink
                   name="Contact"
                   page="/contact"
-                  atualPage={location.pathname === "/contact"}
                 />
               </div>
             </div>
