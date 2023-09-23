@@ -24,47 +24,6 @@ export function LoginModal({ isLoginModalOpen, onRequestClose }: LoginModalProps
       </button>
 
       <LoginForm />
-      <form className="flex flex-col items-center justify-center gap-7">
-        <h2 className="text-[3.35rem] text-primary font-bold mb-7">
-          Papyrus
-        </h2>
-        <h3 className="text-4xl font-semibold">
-          Login
-        </h3>
-
-        <div className='w-96 bg-gray flex items-center gap-7 rounded-lg px-4 py-3'>
-          <img src={userIcon} alt='Ícone de usuário' />
-          <input
-            type="email"
-            required
-            placeholder="Type your e-mail"
-            className="text-lg placeholder:text-black/50 bg-gray border-none outline-none"
-          />
-        </div>
-
-        <div className='w-96 bg-gray flex items-center gap-7 rounded-lg px-4 py-3'>
-          <img src={passwordIcon} alt='Ícone de password' />
-          <input
-            type="password"
-            required
-            placeholder="Type your password"
-            className=" text-lg placeholder:text-black/50 bg-gray border-none outline-none"
-          />
-        </div>
-
-        <a
-          href="#"
-          className='font-semibold text-lg text-black/50 hover:text-black/30'
-        >
-          Reset password
-        </a>
-        
-        <Btn
-          name='Login'
-          bgColor="bg-white text-primary"
-          hover="hover:bg-primary hover:text-white"
-        />
-      </form>
     </Modal>
   )
 }
