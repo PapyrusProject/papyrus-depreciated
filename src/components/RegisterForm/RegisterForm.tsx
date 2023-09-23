@@ -5,7 +5,8 @@ import { Input } from "../Input/Input";
 import Btn from "../Buttons/Btn";
 
 // React-icons
-import { PiUserFill } from "react-icons/pi";
+import { PiUserFill, PiPasswordBold } from "react-icons/pi";
+import { MdEmail } from "react-icons/md";
 
 export default function RegisterForm() {
   const { errors, register, handleForm, handleSubmit } = useRegister();
@@ -61,7 +62,7 @@ export default function RegisterForm() {
           </p>
         )}
         <Btn
-          icon={<PiUserFill className='mr-2 ' />}
+          icon={<PiUserFill className="mr-2 " />}
           name="Sign Up"
           bgColor="bg-primary text-white mt-7 px-7"
           hover="hover:bg-white hover:text-primary"

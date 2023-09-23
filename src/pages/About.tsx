@@ -17,7 +17,8 @@ export default function About() {
       </section>
       <SectionOurMission />
       <SectionSignUp />
-      <section className="flex flex-wrap justify-between w-2/3 gap-6 py-12 m-auto">
+      <section className="flex flex-col items-center justify-center md:grid md:grid-cols-2 md:grid-rows-4 
+      xl:grid-cols-4 xl:grid-rows-2 w-[80%] gap-6 py-12 m-auto">
         <PageStatusItems />
       </section>
     </>
