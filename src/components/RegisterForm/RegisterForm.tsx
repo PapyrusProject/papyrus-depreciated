@@ -67,6 +67,7 @@ export default function RegisterForm() {
           bgColor="bg-primary text-white mt-7 px-7"
           hover="hover:bg-white hover:text-primary"
           type="submit"
+          dataTestingid = "signup-button"
         ></Btn>
       </form>
     </div>

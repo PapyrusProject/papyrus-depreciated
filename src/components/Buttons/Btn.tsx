@@ -6,6 +6,7 @@ type LoginBtnProps = ComponentProps<'button'> & {
     bgColor?: string,
     hover?: string,
     func?: () => void,
+    dataTestingid?: string
 }
 /* 
 name =  texto do botão
@@ -15,9 +16,10 @@ hover = hover:bg-DO HOVER hover:text-DO HOVER
 func = receber a função
 */
 
-export default function Btn({ name = '', icon, bgColor = '', hover = '', func }: LoginBtnProps) {
+export default function Btn({ name = '', icon, bgColor = '', hover = '', func, dataTestingid }: LoginBtnProps) {
     return (
         <button
+            data-testid = {dataTestingid}
             onClick={func}
             className={`items-center justify-center py-1 px-4 text-lg rounded-lg border flex gap-2 ${bgColor} ${hover} py-0.5 px-1 md:py-1 md:px-3 text-md sm:text-lg lg:text-xl`}
         >
