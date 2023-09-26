@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const schema = z
   .object({
-    username: z.string().min(4, "Usuário precisar ter no mínimo 4 caracteres."),
+    username: z.string().min(4, "Usuário precisa ter no mínimo 4 caracteres."),
     email: z
       .string()
       .email("Digite um email válido.")
@@ -14,7 +14,7 @@ export const schema = z
     password: z
       .string()
       .min(6, "Sua senha precisa ter no mínimo 6 caracteres."),
-    confirmPassword: z.string().min(6, "Digite senha correta."),
+    confirmPassword: z.string().min(6, "Digite a senha correta."),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "O campo de senha e confirmação de senha precisam ser iguais.",
