@@ -5,8 +5,7 @@ import { Input } from "../Input/Input";
 import Btn from "../Buttons/Btn";
 
 // React-icons
-import { PiUserFill, PiPasswordBold } from "react-icons/pi";
-import { MdEmail } from "react-icons/md";
+import { PiUserFill } from "react-icons/pi";
 
 export default function RegisterForm() {
   const { errors, register, handleForm, handleSubmit } = useRegister();
