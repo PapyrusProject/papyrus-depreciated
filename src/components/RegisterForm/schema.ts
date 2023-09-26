@@ -13,7 +13,7 @@ export const schema = z
   }, 'Esse email já existe.')*/
     password: z
       .string()
-      .min(6, "Sua senha precisat ter no mínimo 6 caracteres."),
+      .min(6, "Sua senha precisa ter no mínimo 6 caracteres."),
     confirmPassword: z.string().min(6, "Digite senha correta."),
   })
   .refine((data) => data.password === data.confirmPassword, {
