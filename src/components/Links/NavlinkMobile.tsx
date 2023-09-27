@@ -6,11 +6,11 @@ type NavLinkProps = ComponentProps<'a'> & {
     atualPage?: boolean,
 }
 
-export default function Navlink({ name, page, atualPage }: NavLinkProps) {
+export default function NavlinkMobile({ name, page, atualPage }: NavLinkProps) {
     return (
         <a
             href={page}
-            className={`p-1 font-semibold ${atualPage ? 'text-secondary' : 'text-black'} hover:text-primary text-sm md:text-lg`}
+            className={`p-2 font-semibold  ${atualPage ? 'text-secondary' : 'text-white'} text-sm md:text-lg`}
         >
             {name}
         </a>
