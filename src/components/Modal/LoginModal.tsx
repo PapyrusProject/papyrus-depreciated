@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import { LoginForm } from '../LoginForm/LoginForm';
-import { X } from '@phosphor-icons/react';
+import { PiX } from 'react-icons/pi';
 
 interface LoginModalProps {
   isLoginModalOpen: boolean,
@@ -20,7 +20,7 @@ export function LoginModal({ isLoginModalOpen, onRequestClose }: LoginModalProps
         onClick={onRequestClose}
         className='absolute top-6 right-6 hover:brightness-90 duration-200'
       >
-        <X className="w-6 h-6" />
+        <PiX className="w-6 h-6" />
       </button>
 
       <LoginForm />
