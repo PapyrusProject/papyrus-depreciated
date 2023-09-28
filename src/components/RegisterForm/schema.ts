@@ -2,7 +2,11 @@ import { z } from "zod";
 
 export const schema = z
   .object({
-    username: z.string().min(4, "Usuário precisa ter no mínimo 4 caracteres."),
+    username: z.string().min(4, "Usuário precisa ter no mínimo 4 caracteres.").refine((data) => /[^a-z,A-Z,0-9,_]/.test(data),
+    {
+      message: "Usuário deve conter letrar e numeros"
+    }
+    ),
     email: z
       .string()
       .email("Digite um email válido.")
@@ -13,7 +17,11 @@ export const schema = z
   }, 'Esse email já existe.')*/
     password: z
       .string()
-      .min(6, "Sua senha precisa ter no mínimo 6 caracteres."),
+      .min(6, "Sua senha precisa ter no mínimo 6 caracteres.").refine((data) => /[^a-z,A-Z,0-9,_]/.test(data),
+      {
+        message: "Senha deve conter letrar e numeros"
+      }
+      ),
     confirmPassword: z.string().min(6, "Digite a senha correta."),
   })
   .refine((data) => data.password === data.confirmPassword, {
