@@ -11,10 +11,27 @@ import { PiUserFill } from "react-icons/pi";
 import { FaBars } from "react-icons/fa6"
 
 //import motion
-import { useCycle } from "framer-motion"
+import { motion, useCycle } from "framer-motion"
 
 interface HeaderProps {
   onOpenLoginModal(): void;
+}
+
+type motionProps = {
+  open: {
+    y: number,
+    opacity?: number,
+    transition: {
+      delay: number,
+    }
+  }
+  close: {
+    y: number,
+    opacity?: number,
+    transition: {
+      delay: number,
+    }
+  }
 }
 
 export default function Header({ onOpenLoginModal }: HeaderProps) {
@@ -26,7 +43,22 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
     navigate("/signup");
   }
 
-
+  const headerAnimation: motionProps = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.5
+      },
+    },
+    close: {
+      y: -200,
+      opacity: 0,
+      transition: {
+        delay: 0.5
+      },
+    }
+  }
 
   return (
     <>
@@ -82,49 +114,50 @@ export default function Header({ onOpenLoginModal }: HeaderProps) {
       </nav>
 
       {/* header mobile */}
-      {menu &&
-        <div className="flex md:hidden flex-row-reverse">
-          <div className="w-full h-auto bg-primary flex flex-col items-center">
-            <div className="flex gap-6 items-center">
-              <div className="flex flex-col ">
-                <NavlinkMobile
-                  name="Home"
-                  page="/"
-                />
-                <NavlinkMobile
-                  name="About"
-                  page="/about"
-                />
-              </div>
-              <div className="flex flex-col">
-                <NavlinkMobile
-                  name="Service"
-                  page="/service"
-                />
-                <NavlinkMobile
-                  name="Contact"
-                  page="/contact"
-                />
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <Btn
-                icon={<PiUserFill />}
-                name="Sign Up"
-                bgColor="bg-white text-primary items-center"
-                atualPage={location.pathname === "/signup"}
-                func={RedirectTo}
+      <motion.div
+        variants={headerAnimation}
+        animate={menu ? 'open' : 'close'}
+        className="flex md:hidden flex-row-reverse"
+      >
+        <div className="w-full h-auto bg-primary flex flex-col items-center">
+          <div className="flex gap-6 items-center">
+            <div className="flex flex-col ">
+              <NavlinkMobile
+                name="Home"
+                page="/"
               />
-              <Btn
-                name="Login"
-                bgColor="bg-white text-primary"
-                func={onOpenLoginModal}
+              <NavlinkMobile
+                name="About"
+                page="/about"
+              />
+            </div>
+            <div className="flex flex-col">
+              <NavlinkMobile
+                name="Service"
+                page="/service"
+              />
+              <NavlinkMobile
+                name="Contact"
+                page="/contact"
               />
             </div>
           </div>
-        </div>}
-
-
+          <div className="flex gap-2">
+            <Btn
+              icon={<PiUserFill />}
+              name="Sign Up"
+              bgColor="bg-white text-primary items-center"
+              atualPage={location.pathname === "/signup"}
+              func={RedirectTo}
+            />
+            <Btn
+              name="Login"
+              bgColor="bg-white text-primary"
+              func={onOpenLoginModal}
+            />
+          </div>
+        </div>
+      </motion.div>
     </>
   );
 }
