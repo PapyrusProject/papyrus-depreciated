@@ -20,14 +20,21 @@ describe("testing sign up form component",()=>{
     const fieldName = screen.getByPlaceholderText("Insira seu nome de usuário");
 
     expect(screen.queryByText("Usuário precisa ter no mínimo 4 caracteres.")).not.toBeInTheDocument();
-    
+
     fireEvent.change(fieldName, { target: {value: "T"}});
-    
+
     expect(await screen.findByText("Usuário precisa ter no mínimo 4 caracteres.")).toBeInTheDocument();
-    
+
     fireEvent.change(fieldName, { target: {value: "TestName"}});
-    
+
     expect(await screen.findByText("Usuário precisa ter no mínimo 4 caracteres.")).not.toBeInTheDocument();
+  })
+
+  it("testing 'username' field against sql injection", async() => {
+    render(<RegisterForm />);
+    const fieldName = screen.getByPlaceholderText("Insira seu nome de usuário");
+    fireEvent.change(fieldName, { target: {value: "<script></script>"}});
+    expect(await screen.findByText("Usuário deve conter letrar e numeros")).toBeInTheDocument();
   })
 
   it("Checking validation in the email field", async() =>{
@@ -58,6 +65,13 @@ describe("testing sign up form component",()=>{
     fireEvent.change(fieldPassword, { target: {value: "123456"}});
     
     expect(await screen.findByText("Sua senha precisa ter no mínimo 6 caracteres.")).not.toBeInTheDocument();
+  })
+
+  it("testing 'password' field against sql injection", async() => {
+    render(<RegisterForm />);
+    const fieldPassword = screen.getByPlaceholderText("Insira sua senha");
+    fireEvent.change(fieldPassword, { target: {value: "<script></script>"}});
+    expect(await screen.findByText("Senha deve conter letrar e numeros")).toBeInTheDocument();
   })
 
   it("Checking validation in the password confirmation field", async() =>{

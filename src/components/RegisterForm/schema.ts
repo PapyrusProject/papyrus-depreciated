@@ -5,7 +5,7 @@ export const schema = z
     username: z
     .string()
     .min(4, "Usuário precisa ter no mínimo 4 caracteres.")
-    .refine((data) => /[^a-z,A-Z,0-9,_]/.test(data.username),
+    .refine((data) => !/[^a-zA-Z0-9_\s]+/.test(data),
     {message: "Usuário deve conter letrar e numeros"}
     ),
     email: z
@@ -19,7 +19,7 @@ export const schema = z
     password: z
       .string()
       .min(6, "Sua senha precisa ter no mínimo 6 caracteres.")
-      .refine((data) => /[a-z,A-Z,0-9,_]/.test(data.password),
+      .refine((data) => !/[^a-zA-Z0-9_\s]+/.test(data),
       {message: "Senha deve conter letrar e numeros"}
       ),
     confirmPassword: z.string().min(6, "Digite a senha correta."),
