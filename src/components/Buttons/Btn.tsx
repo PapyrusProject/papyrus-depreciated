@@ -18,7 +18,7 @@ func = receber a função
 */
 
 
-export default function Btn({ name = '', icon, atualPage, bgColor = '', hover = '', func }: LoginBtnProps) {
+export default function Btn({ name = '', icon, atualPage, bgColor = '', hover = '', func, dataTestingid }: LoginBtnProps) {
     return (
         <button
             data-testid = {dataTestingid}
