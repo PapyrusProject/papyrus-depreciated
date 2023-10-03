@@ -18,12 +18,12 @@ func = receber a função
 */
 
 
-export default function Btn({ name = '', icon, atualPage, bgColor = '', hover = '', func, dataTestingid }: LoginBtnProps) {
+export default function Btn({ name = '', icon, bgColor = '', hover = '', func, dataTestingid }: LoginBtnProps) {
     return (
         <button
             data-testid = {dataTestingid}
             onClick={func}
-            className={`${atualPage ? 'hidden' : 'flex'}  items-center justify-center py-1 px-4 text-lg rounded-lg border gap-2 ${bgColor} ${hover} py-0.5 px-1 md:py-1 md:px-3 text-md sm:text-lg lg:text-xl`}
+            className={`flex items-center justify-center py-1 px-4 text-lg rounded-lg border gap-2 ${bgColor} ${hover} py-0.5 px-1 md:py-1 md:px-3 text-md sm:text-lg lg:text-xl`}
         >
             {icon}
             {name}
