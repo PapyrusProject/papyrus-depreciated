@@ -38,6 +38,7 @@ export default function Header({ onOpenLoginModal }: _RootProps) {
         >
           {Links.map((item) => (
             <NavLink
+              key={item.name}
               to={item.path}
               className={({ isActive }) =>
                 `font-bold ${
@@ -54,11 +55,12 @@ export default function Header({ onOpenLoginModal }: _RootProps) {
             menu ? "" : "hidden md:flex"
           }`}
         >
-          <Btn
-            name="Sign Up"
-            icon={<PiUserFill />}
-            bgColor="bg-primary text-white hover:bg-white hover:text-primary"
-          />
+          <NavLink
+            to={"/signup"}
+            className={({ isActive }) => `user-btn ${isActive ? "hidden" : "flex"}`}
+          >
+            <PiUserFill /> SingUp
+          </NavLink>
           <Btn
             name="Login"
             bgColor="bg-white text-primary hover:bg-primary hover:text-white"
