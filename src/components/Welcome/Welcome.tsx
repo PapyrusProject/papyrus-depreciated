@@ -1,8 +1,16 @@
 import Btn from '../Buttons/Btn'
 import { BiSolidNotepad } from "react-icons/bi";
 import Logo from '../../assets/logo.svg'
+import { useNavigate } from 'react-router-dom';
 
 export default function Welcome() {
+
+    const navigate = useNavigate();
+
+    function RedirectTo() {
+        navigate('/notes')
+    }
+
     return (
         <div className=' flex flex-col items-center justify-center md:flex-row mx-auto'>
             <div className='w-1/2  flex flex-col items-center justify-center '>
@@ -21,6 +29,7 @@ export default function Welcome() {
                         icon={<BiSolidNotepad />}
                         bgColor="bg-white text-primary"
                         hover="hover:bg-primary hover:text-white"
+                        func={RedirectTo}
                     />
                 </div>
             </div>
