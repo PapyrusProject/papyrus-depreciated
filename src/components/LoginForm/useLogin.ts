@@ -4,6 +4,7 @@ import { LoginProps, schema } from './schema';
 
 export function useLogin() {
   const { register, handleSubmit, formState: { errors } } = useForm<LoginProps>({
+    mode: 'onChange',
     resolver: zodResolver(schema)
   })
 
