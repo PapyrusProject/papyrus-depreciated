@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 
 // Pages
 import Btn from "../Buttons/Btn";
+import { Links } from "./NavLinks";
 
 // Framer motion
 import { useCycle } from "framer-motion";
@@ -35,57 +36,31 @@ export default function Header({ onOpenLoginModal }: _RootProps) {
             menu ? "flex-col" : "hidden md:flex"
           }`}
         >
-          <NavLink
-            to={"/"}
-            className={({ isActive }) =>
-              `font-bold ${
-                isActive ? "text-white md:text-secondary" : "text-black"
-              }`
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to={"/about"}
-            className={({ isActive }) =>
-              `font-bold ${
-                isActive ? "text-white md:text-secondary" : "text-black"
-              }`
-            }
-          >
-            About
-          </NavLink>
-          <NavLink
-            to={"/service"}
-            className={({ isActive }) =>
-              `font-bold ${
-                isActive ? "text-white md:text-secondary" : "text-black"
-              }`
-            }
-          >
-            Service
-          </NavLink>
-          <NavLink
-            to={"/contact"}
-            className={({ isActive }) =>
-              `font-bold ${
-                isActive ? "text-white md:text-secondary" : "text-black"
-              }`
-            }
-          >
-            Contact
-          </NavLink>
+          {Links.map((item) => (
+            <NavLink
+              key={item.name}
+              to={item.path}
+              className={({ isActive }) =>
+                `font-bold ${
+                  isActive ? "text-white md:text-secondary" : "text-black"
+                }`
+              }
+            >
+              {item.name}
+            </NavLink>
+          ))}
         </nav>
         <div
           className={`flex justify-center gap-6 bg-primary mb-4 py-4 md:mb-0 md:py-0 md:bg-white w-full md:w-fit ${
             menu ? "" : "hidden md:flex"
           }`}
         >
-          <Btn
-            name="Sign Up"
-            icon={<PiUserFill />}
-            bgColor="bg-primary text-white hover:bg-white hover:text-primary"
-          />
+          <NavLink
+            to={"/signup"}
+            className={({ isActive }) => `user-btn ${isActive ? "hidden" : "flex"}`}
+          >
+            <PiUserFill /> SingUp
+          </NavLink>
           <Btn
             name="Login"
             bgColor="bg-white text-primary hover:bg-primary hover:text-white"

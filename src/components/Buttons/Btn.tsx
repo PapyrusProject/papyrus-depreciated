@@ -17,8 +17,8 @@ hover = hover:bg-DO HOVER hover:text-DO HOVER
 func = receber a função
 */
 
-
 export default function Btn({ name = '', icon, bgColor = '', hover = '', func, dataTestingid }: LoginBtnProps) {
+
     return (
         <button
             data-testid = {dataTestingid}
