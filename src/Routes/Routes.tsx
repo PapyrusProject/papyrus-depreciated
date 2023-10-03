@@ -10,6 +10,7 @@ import Services from "../pages/Services";
 import Users from "../pages/Users";
 import SignUp from "../pages/SignUp";
 import Page404 from "../pages/404";
+import Notes from "../pages/Notes";
 
 export const routes = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ export const routes = createBrowserRouter([
       { path: "/service", element: <Services /> },
       { path: "/users", element: <Users /> },
       { path: "/signup", element: <SignUp /> },
-      {path: "/404", element: <Page404 />}
+      { path: "/404", element: <Page404 /> },
+      { path: "/notes", element: <Notes /> },
     ],
   },
 ]);

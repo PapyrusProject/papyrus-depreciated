@@ -5,8 +5,7 @@ import { Input } from "../Input/Input";
 import Btn from "../Buttons/Btn";
 
 // React-icons
-import { PiUserFill, PiPasswordBold } from "react-icons/pi";
-import { MdEmail } from "react-icons/md";
+import { PiUserFill } from "react-icons/pi";
 
 export default function RegisterForm() {
   const { errors, register, handleForm, handleSubmit } = useRegister();
@@ -67,6 +66,7 @@ export default function RegisterForm() {
           bgColor="bg-primary text-white mt-7 px-7"
           hover="hover:bg-white hover:text-primary"
           type="submit"
+          dataTestingid = "signup-button"
         ></Btn>
       </form>
     </div>

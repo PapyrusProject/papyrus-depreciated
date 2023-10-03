@@ -7,11 +7,11 @@ import { NavLink } from "react-router-dom";
 
 // Pages
 import Btn from "../Buttons/Btn";
+import { Links } from "./NavLinks";
 
 // Framer motion
 import { useCycle } from "framer-motion";
 import { _RootProps } from "../../pages/_Root";
-import { Links } from "./NavLinks";
 
 export default function Header({ onOpenLoginModal }: _RootProps) {
   const [menu, toggleMenu] = useCycle(false, true);
