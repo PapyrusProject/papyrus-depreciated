@@ -7,6 +7,7 @@ export function LoginForm() {
 
   return (
     <form
+      data-testid="login-form"
       onSubmit={handleSubmit(handleLogin)}
       className="flex flex-col items-center justify-center gap-7"
     >
@@ -21,6 +22,7 @@ export function LoginForm() {
         <Input
           {...register("email")}
           type="text"
+          name="email"
           placeholder="Insira seu e-mail"
         />
         {errors.email && (
@@ -34,6 +36,7 @@ export function LoginForm() {
         <Input
           {...register("password")}
           type="password"
+          name="password"
           placeholder="Insira sua senha"
         />
         {errors.password && (
@@ -51,7 +54,9 @@ export function LoginForm() {
       </a>
       
       <Btn
+        dataTestId="login-button"
         name='Login'
+        type="submit"
         bgColor="bg-white text-primary"
         hover="hover:bg-primary hover:text-white"
       />
