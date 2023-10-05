@@ -18,13 +18,13 @@ export default function Header({ onOpenLoginModal }: _RootProps) {
 
   return (
     <div className="md:container md:mx-auto">
-      <header className="flex flex-col md:flex-row items-center justify-between md:py-2">
-        <div className="p-2 flex justify-center">
-          <a href="/" className="text-3xl font-bold">
+      <header className="flex flex-col items-center justify-between md:flex-row md:py-2">
+        <div className="flex justify-center p-2">
+          <a href="/" data-testid="logo" className="text-3xl font-bold">
             Papy<span className="text-primary">rus.</span>
           </a>
           <button
-            className="md:hidden absolute right-4 top-4"
+            className="absolute md:hidden right-4 top-4"
             onClick={() => toggleMenu()}
           >
             {menu ? <AiOutlineClose /> : <AiOutlineMenu />}
@@ -59,7 +59,7 @@ export default function Header({ onOpenLoginModal }: _RootProps) {
             to={"/signup"}
             className={({ isActive }) => `user-btn ${isActive ? "hidden" : "flex"}`}
           >
-            <PiUserFill /> SingUp
+            <PiUserFill /> Sign Up
           </NavLink>
           <Btn
             name="Login"
