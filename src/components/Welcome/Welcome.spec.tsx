@@ -1,7 +1,6 @@
 //import teste
 import { describe, expect, it, vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
-import { userEvent } from '@testing-library/user-event'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 
 //componete a ser testado
 import { BrowserRouter } from 'react-router-dom'
@@ -15,6 +14,12 @@ vi.mock('react-router', () => ({
 
 describe('welcome', () => {
 
+    it('found my note button', () => {
+        render(<BrowserRouter><Welcome/></BrowserRouter>)
+
+        expect(screen.getByText('My Note')).toBeInTheDocument();
+    })
+
     it('test my note button', async () => {
         render(<BrowserRouter><Welcome /></BrowserRouter>)
 
@@ -22,11 +27,10 @@ describe('welcome', () => {
 
         mockNavigate.mockClear();
 
-        userEvent.click(screen.getByText('My Note'))
+        fireEvent.click(screen.getByText('My Note'))
 
-        mockNavigate('/notes')
+        await waitFor(() => window.location.pathname === '/notes')
 
-        expect(mockNavigate).toHaveBeenCalled;
-        expect(mockNavigate).toHaveBeenCalledWith('/notes')
+        expect(window.location.pathname).toEqual('/notes')
     })
 })
