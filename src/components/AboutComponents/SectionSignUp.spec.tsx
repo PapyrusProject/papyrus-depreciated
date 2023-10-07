@@ -1,7 +1,7 @@
 //imports teste
 import { describe, expect, it, vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
-import { userEvent } from '@testing-library/user-event'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import "@testing-library/jest-dom";
 
 //componente a ser testado
 import { SectionSignUp } from './SectionSignUp'
@@ -16,6 +16,11 @@ vi.mock('react-router', () => ({
 
 describe('signup', () => {
 
+    it('found button sign up'), () => {
+        render(<BrowserRouter><SectionSignUp/></BrowserRouter>)
+
+        expect(screen.getByText('Sing Up')).toBeInTheDocument();
+    }
 
     it('test button sign up', async () => {
 
@@ -25,11 +30,10 @@ describe('signup', () => {
 
         mockNavigate.mockClear();
 
-        userEvent.click(screen.getByText('Sign Up'))
+        fireEvent.click(screen.getByText('Sign Up'))
 
-        mockNavigate('/signup')
+        await waitFor(() => window.location.pathname === '/signup');
 
-        expect(mockNavigate).toHaveBeenCalled;
-        expect(mockNavigate).toHaveBeenCalledWith('/signup');
+        expect(window.location.pathname).toEqual('/signup');
     })
 })
