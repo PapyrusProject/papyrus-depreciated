@@ -1,62 +1,73 @@
-// Pages and components imports
-import Btn from "../Buttons/Btn";
-import Navlink from "../Links/Navlink";
-
-// react router dom packages
-import { useNavigate, useLocation } from "react-router-dom";
-
-//React icons Packages
+// React Icons
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { PiUserFill } from "react-icons/pi";
 
-interface HeaderProps {
-  onOpenLoginModal(): void;
-}
+// React Router Dom
+import { NavLink } from "react-router-dom";
 
-export default function Header({ onOpenLoginModal }: HeaderProps) {
-  const location = useLocation();
-  const navigate = useNavigate();
+// Pages
+import Btn from "../Buttons/Btn";
+import { Links } from "./NavLinks";
 
-  function RedirectTo() {
-    navigate("/signup");
-  }
+// Framer motion
+import { useCycle } from "framer-motion";
+import { _RootProps } from "../../pages/_Root";
+
+export default function Header({ onOpenLoginModal }: _RootProps) {
+  const [menu, toggleMenu] = useCycle(false, true);
 
   return (
-    <nav className="flex items-center justify-around py-2 mx-auto">
-      <a href="/" className="text-4xl text-primary font-bold">
-        Papy<span className="text-black">rus.</span>
-      </a>
-      <div className="flex items-center gap-4">
-        <Navlink
-          name="About"
-          page="/about"
-          atualPage={location.pathname === "/about"}
-        />
-        <Navlink
-          name="Service"
-          page="/service"
-          atualPage={location.pathname === "/service"}
-        />
-        <Navlink
-          name="Contact"
-          page="/contact"
-          atualPage={location.pathname === "/contact"}
-        />
-      </div>
-      <div className="flex gap-6">
-        <Btn
-          icon={<PiUserFill />}
-          name="Sign Up"
-          bgColor="bg-primary text-white items-center"
-          hover="hover:bg-white hover:text-primary"
-          func={RedirectTo}
-        />
-        <Btn
-          name="Login"
-          bgColor="bg-white text-primary"
-          hover="hover:bg-primary hover:text-white"
-          func={onOpenLoginModal}
-        />
-      </div>
-    </nav>
+    <div className="md:container md:mx-auto">
+      <header className="flex flex-col items-center justify-between md:flex-row md:py-2">
+        <div className="flex justify-center p-2">
+          <a href="/" data-testid="logo" className="text-3xl font-bold">
+            Papy<span className="text-primary">rus.</span>
+          </a>
+          <button
+            className="absolute md:hidden right-4 top-4"
+            onClick={() => toggleMenu()}
+          >
+            {menu ? <AiOutlineClose /> : <AiOutlineMenu />}
+          </button>
+        </div>
+
+        <nav
+          className={`flex md:flex-row items-center gap-6 bg-primary mt-4 pt-4 md:mt-0 md:pt-0 md:bg-white w-full md:w-fit ${
+            menu ? "flex-col" : "hidden md:flex"
+          }`}
+        >
+          {Links.map((item) => (
+            <NavLink
+              key={item.name}
+              to={item.path}
+              className={({ isActive }) =>
+                `font-bold ${
+                  isActive ? "text-white md:text-secondary" : "text-black"
+                }`
+              }
+            >
+              {item.name}
+            </NavLink>
+          ))}
+        </nav>
+        <div
+          className={`flex justify-center gap-6 bg-primary mb-4 py-4 md:mb-0 md:py-0 md:bg-white w-full md:w-fit ${
+            menu ? "" : "hidden md:flex"
+          }`}
+        >
+          <NavLink
+            to={"/signup"}
+            className={({ isActive }) => `user-btn ${isActive ? "hidden" : "flex"}`}
+          >
+            <PiUserFill /> Sign Up
+          </NavLink>
+          <Btn
+            name="Login"
+            bgColor="bg-white text-primary hover:bg-primary hover:text-white"
+            func={onOpenLoginModal}
+          />
+        </div>
+      </header>
+    </div>
   );
 }

@@ -8,6 +8,7 @@ export function handleLogin(data: LoginProps) {
 
 export function useLogin() {
   const { register, handleSubmit, formState: { errors } } = useForm<LoginProps>({
+    mode: 'onChange',
     resolver: zodResolver(schema)
   })
 

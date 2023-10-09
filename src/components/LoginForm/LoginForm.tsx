@@ -54,7 +54,7 @@ export function LoginForm() {
       </a>
       
       <Btn
-        dataTestId="login-button"
+        dataTestingId="login-button"
         name='Login'
         type="submit"
         bgColor="bg-white text-primary"

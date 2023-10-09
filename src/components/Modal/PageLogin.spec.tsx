@@ -2,10 +2,22 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import { userEvent } from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
-import { LoginForm } from '../components/LoginForm/LoginForm'
-import { handleLogin } from '../components/LoginForm/useLogin'
+import { LoginForm } from '../LoginForm/LoginForm'
+import { handleLogin } from '../LoginForm/useLogin'
 
 describe('LoginForm Component', () => {
+  it('Should be able to render form components on screen', () => {
+    render(<LoginForm />)
+    
+    const inputEmail = screen.getByPlaceholderText('Insira seu e-mail')
+    const inputPassword = screen.getByPlaceholderText('Insira sua senha')
+    const loginButton = screen.getByTestId('login-button')
+
+    expect(inputEmail).toBeInTheDocument()
+    expect(inputPassword).toBeInTheDocument()
+    expect(loginButton).toBeInTheDocument()
+  })
+
   it('Should be able to receive user email and password in the form fields', async () => {
     render(<LoginForm />)
 

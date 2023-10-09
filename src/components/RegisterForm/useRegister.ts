@@ -12,7 +12,7 @@ export const useRegister = () => {
     register,
     formState: { errors },
   } = useForm<RegisterProps>({
-    mode: "onBlur",
+    mode: "onChange",
     criteriaMode: "all",
     resolver: zodResolver(schema),
   });
