@@ -159,12 +159,10 @@ describe("testing header component", ()=>{
   })
 
   it("testing whether the login component is sending to the right route", async()=>{
-    function handleOpenLoginModal() {
-    }
 
     render(
       <BrowserRouter>
-        <Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header />
       </BrowserRouter>
     )
   })

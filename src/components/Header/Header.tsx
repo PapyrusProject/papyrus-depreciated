@@ -11,10 +11,12 @@ import { Links } from "./NavLinks";
 
 // Framer motion
 import { useCycle } from "framer-motion";
-import { _RootProps } from "../../pages/_Root";
+import { useContext } from "react";
+import { LoginContext } from "../../context/LoginContext";
 
-export default function Header({ onOpenLoginModal }: _RootProps) {
+export default function Header() {
   const [menu, toggleMenu] = useCycle(false, true);
+  const { handleOpenLoginModal } = useContext(LoginContext);
 
   return (
     <div className="md:container md:mx-auto">
@@ -64,7 +66,7 @@ export default function Header({ onOpenLoginModal }: _RootProps) {
           <Btn
             name="Login"
             bgColor="bg-white text-primary hover:bg-primary hover:text-white"
-            func={onOpenLoginModal}
+            func={handleOpenLoginModal}
           />
         </div>
       </header>
