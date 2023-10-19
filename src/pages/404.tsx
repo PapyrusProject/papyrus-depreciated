@@ -1,7 +1,11 @@
+import Erro404 from "../components/Erro404/Erro404";
+
 export default function Page404() {
   return (
     <>
-      <h1>404 page</h1>
+      <div className="flex justify-center items-center">
+        <Erro404 />
+      </div>
     </>
   );
 }
