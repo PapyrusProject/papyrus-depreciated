@@ -4,10 +4,7 @@ import { PiX } from 'react-icons/pi';
 import { useContext } from 'react';
 import { LoginContext } from '../../context/LoginContext';
 
-// interface LoginModalProps {
-//   // isLoginModalOpen: boolean,
-//   // onRequestClose(): void,
-// }
+Modal.setAppElement('body');
 
 export function LoginModal() {
   const { isLoginModalOpen, handleCloseLoginModal } = useContext(LoginContext);
@@ -23,6 +20,7 @@ export function LoginModal() {
         type="button"
         onClick={handleCloseLoginModal}
         className='absolute duration-200 top-6 right-6 hover:brightness-90'
+        data-testid="loginModal"
       >
         <PiX className="w-6 h-6" />
       </button>

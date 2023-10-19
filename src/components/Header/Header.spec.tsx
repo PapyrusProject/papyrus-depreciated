@@ -3,6 +3,8 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import Header from "./Header";
+import LoginProvider from "../../context/LoginContext";
+import { LoginModal } from "../Modal/LoginModal";
 
 const mockNavigate = vi.fn();
 
@@ -14,12 +16,9 @@ describe("testing header component", ()=>{
 
   it("checking if the components are on screen", ()=>{
 
-    function handleOpenLoginModal() {
-    }
-
     render(
       <BrowserRouter>
-        <Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header />
       </BrowserRouter>
     )
 
@@ -33,12 +32,10 @@ describe("testing header component", ()=>{
   })
 
   it("testing whether the logo component is sending to the right route", async()=>{
-    function handleOpenLoginModal() {
-    }
 
     render(
       <BrowserRouter>
-        <Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header />
       </BrowserRouter>
     )
 
@@ -54,12 +51,10 @@ describe("testing header component", ()=>{
   })
 
   it("testing whether the home component is sending to the right route", async()=>{
-    function handleOpenLoginModal() {
-    }
 
     render(
       <BrowserRouter>
-        <Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header />
       </BrowserRouter>
     )
 
@@ -75,12 +70,10 @@ describe("testing header component", ()=>{
   })
 
   it("testing whether the about component is sending to the right route", async()=>{
-    function handleOpenLoginModal() {
-    }
 
     render(
       <BrowserRouter>
-        <Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header />
       </BrowserRouter>
     )
 
@@ -96,12 +89,10 @@ describe("testing header component", ()=>{
   })
   
   it("testing whether the service component is sending to the right route", async()=>{
-    function handleOpenLoginModal() {
-    }
 
     render(
       <BrowserRouter>
-        <Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header />
       </BrowserRouter>
     )
 
@@ -117,12 +108,10 @@ describe("testing header component", ()=>{
   })
   
   it("testing whether the contact component is sending to the right route", async()=>{
-    function handleOpenLoginModal() {
-    }
 
     render(
       <BrowserRouter>
-        <Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header />
       </BrowserRouter>
     )
 
@@ -138,12 +127,10 @@ describe("testing header component", ()=>{
   })
 
   it("testing whether the sign up component is sending to the right route", async()=>{
-    function handleOpenLoginModal() {
-    }
 
     render(
       <BrowserRouter>
-        <Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header />
       </BrowserRouter>
     )
 
@@ -159,12 +146,21 @@ describe("testing header component", ()=>{
   })
 
   it("testing whether the login component is sending to the right route", async()=>{
-
+    
     render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
+      <LoginProvider>
+        <BrowserRouter>
+          <Header />
+          <LoginModal />
+        </BrowserRouter>
+      </LoginProvider>
     )
+
+    await screen.findByText('Login');
+
+    fireEvent.click(screen.getByText('Login'));
+
+    expect(await screen.findByTestId("loginModal")).toBeInTheDocument();
   })
 
 })
