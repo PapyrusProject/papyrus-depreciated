@@ -1,24 +1,26 @@
 import Modal from 'react-modal';
 import { LoginForm } from '../LoginForm/LoginForm';
 import { PiX } from 'react-icons/pi';
+import { useContext } from 'react';
+import { LoginContext } from '../../context/LoginContext';
 
-interface LoginModalProps {
-  isLoginModalOpen: boolean,
-  onRequestClose(): void,
-}
+Modal.setAppElement('body');
 
-export function LoginModal({ isLoginModalOpen, onRequestClose }: LoginModalProps) {
+export function LoginModal() {
+  const { isLoginModalOpen, handleCloseLoginModal } = useContext(LoginContext);
+
   return (
     <Modal
       isOpen={isLoginModalOpen}
-      onRequestClose={onRequestClose}
+      onRequestClose={handleCloseLoginModal}
       overlayClassName="react-modal-overlay"
       className="w-full max-w-[52.8rem] bg-white px-7 pt-7 pb-24 relative rounded-lg outline-none"
     >
       <button
         type="button"
-        onClick={onRequestClose}
-        className='absolute top-6 right-6 hover:brightness-90 duration-200'
+        onClick={handleCloseLoginModal}
+        className='absolute duration-200 top-6 right-6 hover:brightness-90'
+        data-testid="loginModal"
       >
         <PiX className="w-6 h-6" />
       </button>

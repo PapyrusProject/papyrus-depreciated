@@ -5,15 +5,11 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
-export type _RootProps = {
-  onOpenLoginModal(): void,
-}
-
-export default function _Root({ onOpenLoginModal }: _RootProps) {
+export default function _Root() {
   return (
-    <div className="flex flex-col min-h-screen w-full font-inter bg-white">
+    <div className="flex flex-col w-full min-h-screen bg-white font-inter">
       <header>
-        <Header onOpenLoginModal={onOpenLoginModal} />
+        <Header />
       </header>
       <main className="grow">
         <Outlet />
