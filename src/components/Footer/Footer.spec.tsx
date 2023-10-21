@@ -1,6 +1,6 @@
 //import teste
 import { describe, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 //componete a ser testado
 import { BrowserRouter } from 'react-router-dom'
@@ -31,12 +31,6 @@ describe('footer', () => {
         const link = screen.getByTestId('github');
 
         expect(link.getAttribute('href')).toEqual('https://github.com/PapyrusProject/papyrus')
-
-       // fireEvent.click(screen.getByTestId('github'));
-
-       // await waitFor(() => window.location.href === 'https://github.com/PapyrusProject/papyrus')
-
-       // expect(window.location.href).toEqual('https://github.com/PapyrusProject/papyrus')
     })
 
     it('test discord icon', async () => {
