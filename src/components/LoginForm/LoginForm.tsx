@@ -54,6 +54,7 @@ export function LoginForm() {
         name='Login'
         bgColor="bg-white text-primary"
         hover="hover:bg-primary hover:text-white"
+        dataTestingid="login-button"
       />
     </form>
   );
