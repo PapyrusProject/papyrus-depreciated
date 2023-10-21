@@ -26,11 +26,17 @@ describe('footer', () => {
 
         await screen.findByTestId('github');
 
-        fireEvent.click(screen.getByTestId('github'));
+        mockNavigate.mockClear();
 
-        await waitFor(() => window.location.href === 'https://github.com/PapyrusProject/papyrus')
+        const link = screen.getByTestId('github');
 
-        expect(window.location.href).toEqual('https://github.com/PapyrusProject/papyrus')
+        expect(link.getAttribute('href')).toEqual('https://github.com/PapyrusProject/papyrus')
+
+       // fireEvent.click(screen.getByTestId('github'));
+
+       // await waitFor(() => window.location.href === 'https://github.com/PapyrusProject/papyrus')
+
+       // expect(window.location.href).toEqual('https://github.com/PapyrusProject/papyrus')
     })
 
     it('test discord icon', async () => {
@@ -38,10 +44,8 @@ describe('footer', () => {
 
         await screen.findByTestId('discord');
 
-        fireEvent.click(screen.getByTestId('discord'));
+        const link = screen.getByTestId('discord');
 
-        await waitFor(() => window.location.href === 'https://discord.gg/QcraJAg9')
-
-        expect(window.location.href).toEqual('https://discord.gg/QcraJAg9')
+        expect(link.getAttribute('href')).toEqual('https://discord.gg/QcraJAg9')
     })
 })
